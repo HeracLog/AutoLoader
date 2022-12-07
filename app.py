@@ -8,10 +8,11 @@ LinksArray  = LinksContent.split(",")
 
 #Loops through array elements to download them
 def downloadVideos():
-
+    num = 1
     for n in LinksArray:
-        print("Downloading video: ")
+        print(f"Downloading video {num}: ")
         YouTube(n).streams.filter(res="360p").first().download()
+        num += 1
 
 
 #Calls function to start the program
